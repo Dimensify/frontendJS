@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+<div class="common_position">
+        <div>
+        <img src="assets/Dimensify-removebg-preview.png"  class="img_class" >
+    </div>
+
+    <input placeholder="describe your model">
+    <div class="button_div">
+        <button  id="btnGenerate">Generate</button>
+        &nbsp;&nbsp;&nbsp;
+        <button id ="btnUpload">Upload</button>
+    </div>      
+</div>
+
+<div id="popup-window-generate", class="popup-window">
+    <button type="button" class="close-button" id="close-button-gen">X</button>
+</div>   
+
+<div class="warpper">
+<div id="popup-window-browse", class="popup-window">
+    
+        <p>Upload your file</p>
+        <div class="drag-area">
+             <div class="drag-drop-header">Drag & Drop</div>
+         
+             <div class="browse-header">or <button type="button"  id="browse-button">browse</button></div>
+             <input type="file" class="file-input" hidden/>
+             <div class="support">supports: jpeg, jpg, png</div>
+        </div>
+        <button type="button" class="close-button" id="close-button-bro">X</button>
+
+</div>   
+</div>
+
+
+  
+</html>
+
+
+<script src="popUpGenerator.js"></script>  
