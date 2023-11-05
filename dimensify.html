@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon_io/favicon.ico">
+</head>
+<body>
+    
+<div class="common_position">
+    <div>
+        <img src="assets/Dimensify_logo_orange_cropped.png"  class="img_class" >
+     </div>
+    <input id = "input_desc" placeholder="describe your model">
+    <p style="margin-top: 20px;">describe your model or upload an image</p>
+    <div class="button_div">
+        <table>
+            <tr>
+                <td>
+                     <button  id="btnGenerate" style="width: 200px;">Generate</button>
+                </td>
+                <td>
+                     <button id ="btnUpload" style="width: 200px;">Upload</button>
+                </td>
+            </tr>
+         </table>
+    </div>      
+</div>
+
+<div id="popup-window-generate", class="popup-window">
+    <button type="button" class="close-button" id="close-button-gen">X</button>
+</div>   
+
+<div class="warpper">
+<div id="popup-window-browse", class="popup-window">
+    
+        <p>Upload the Image</p>
+        <div class="drag-area">
+             <div class="drag-drop-header">Drag & Drop</div>
+         
+             <div class="browse-header">or <button type="button"  id="browse-button">browse</button></div>
+             <input type="file" class="file-input" hidden/>
+             <div class="support">supports: jpeg, jpg, png</div>
+        </div>
+        <button type="button" class="close-button" id="close-button-bro">X</button>
+
+</div>   
+</div>
+
+
+</body>
+</html>
+
+<script src="popUpGenerator.js"></script>  

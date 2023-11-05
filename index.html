@@ -1,47 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
-    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" type="image/x-icon" href="/assets/favicon_io/favicon-32x32.png"> -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="styleIndex.css">
 </head>
 <body>
     
-<div class="common_position">
-        <div>
-        <img src="assets/Dimensify-removebg-preview.png"  class="img_class" >
+    <canvas id="Matrix"></canvas>
+    <div id = "container">
+        <div id ="outer_container">
+             <img src="assets/Dimensify_logo_orange_cropped.png"/>
+
+            <div id = "inner_container">
+                <!-- <button id = "btn_try" onclick="window.location.href='./dimensify.html'">Try Out</i></button> -->
+                <button id = "btn_try">Try Out</i></button>
+            </div>
+             <div id="join_waiting_list", class="popup-window">
+                <div class="form-container">
+                   <h3>Dimensify Coming Soon</h3>
+                    <form>
+
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                        <button id = 'btn_wait_list'  style="width:100%">Join Waiting List</button>
+                        <button type="button" class="close-button" id="close-button-wait">x</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+   
     </div>
 
-    <input placeholder="describe your model">
-    <div class="button_div">
-        <button  id="btnGenerate">Generate</button>
-        &nbsp;&nbsp;&nbsp;
-        <button id ="btnUpload">Upload</button>
-    </div>      
-</div>
 
-<div id="popup-window-generate", class="popup-window">
-    <button type="button" class="close-button" id="close-button-gen">X</button>
-</div>   
+        
+             <div id = "inner_naration" class="inner_naration_class">
+                <h2>About Us</h2>
+                   <p>Welcome to Dimensify, where the future of 3D modeling has arrived!
+                Our revolutionary application, powered by cutting-edge Generative AI,
+                turns your creative vision into reality with unparalleled ease.
+                Simply describe your ideas in text or provide a single image, and watch as 
+                Dimensify transforms them into stunning 3D models. Whether you're a seasoned  
+                designer or a curious enthusiast, our tool will unlock a world of possibilities,
+                making 3D modeling accessible and intuitive like never before. Explore the limitless
+                potential of Dimensify and bring your imagination to life effortlessly.
+                  </p>
 
-<div class="warpper">
-<div id="popup-window-browse", class="popup-window">
-    
-        <p>Upload your file</p>
-        <div class="drag-area">
-             <div class="drag-drop-header">Drag & Drop</div>
-         
-             <div class="browse-header">or <button type="button"  id="browse-button">browse</button></div>
-             <input type="file" class="file-input" hidden/>
-             <div class="support">supports: jpeg, jpg, png</div>
-        </div>
-        <button type="button" class="close-button" id="close-button-bro">X</button>
+                  <h3>Team<h3>    
+                  <table>
+                    <tr>
+                     <td style="width: 300px;">
+                        <p style="font-size: medium;">Khushbu Verma<br>
+                            <a href="https://www.linkedin.com/in/khushbu-verma-283100149/"  target="_blank"  style="font-size: small;">Linked In</a>
+                         </p>
+                     </td>   
 
-</div>   
-</div>
+                     <td style="width: 300px;">
+                        <p style="font-size: medium;">Vishwa Singh<br>
+                            <a href="https://www.linkedin.com/in/vishwamsingh/" target="_blank"  style="font-size: small;">Linked In</a>
+                         </p>
+                     </td>
+                     </tr>
+                     <tr>
+                        <td style="width: 300px">
+                            <p style="font-size: medium;">Saravana Kumar<br>
+                                <a href="https://www.linkedin.com/in/elsaravana/" target="_blank"  style="font-size: small;">Linked In</a>
+                             </p>
+            
+                        </td>
+                    </tr>
+                  </table>
+            </div> 
 
 
-  
+           <!-- <div id = "video">
+                <h1>How it works<h1>
+                <video width="700px" height="600px" controls style="display: none;">
+                    <source src="assets/LatestForEUXR.mp4" type="video/mp4">
+                  </video>
+                </div> -->
+
+
+       
+    </div>
+    <footer>
+        <p style="color: white;">Copyright © 2023 Eurosys Informatics GmbH. All rights reserved.</p>
+        <p style="color: white;"><a href="./Impression.html" target="_blank">Impressum</a> | <a href="./PrivacyPolicy.html" target="_blank">Privacy policy</a>  </p>
+    </footer>
+</body>
 </html>
 
-
-<script src="popUpGenerator.js"></script>  
+<script src="./matrix.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("fy9fpWxE0Qmx-UwP2");
+   })();
+</script>

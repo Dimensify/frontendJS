@@ -91,3 +91,12 @@
     file = this.files[0];
     displayImage();
   });
+
+  inputField = document.getElementById("input_desc");
+
+  /*inputField.addEventListener('focus' , function(){
+    inputField.style.border="1px solid red";
+  
+  });*/
+
+
