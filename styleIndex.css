@@ -32,7 +32,7 @@ img {
 #inner_container{
     text-align: center;
     padding: 2%;
-    background-image: linear-gradient(to right, black, rgb(45, 43, 43));
+    background-image: linear-gradient(to right, black, black);
     border-radius: 10px;
     width: 50%;
     height: 50px;
@@ -58,7 +58,7 @@ img {
      */
      background: linear-gradient(to right ,#ef6c3c,#c40740);
     /* background-color: white; */
-    width: 50%;
+    width: 65%;
     margin: auto;
     color: white;
     line-height: 1.6;
@@ -86,6 +86,7 @@ img {
     -webkit-text-fill-color:#00FF41;
     /* color: #00FF41; */
 }
+
 /* #inner_naration h2:hover, h3:hover, #inner_naration:not(a){ */
     /* background: linear-gradient(to right ,#ef6c3c,#c40740); */
     /* -webkit-background-clip: text; */
