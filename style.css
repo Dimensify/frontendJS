@@ -21,23 +21,6 @@ body{
 }
 
 
-
-@media(min-width:2000)
-{
-    .button_div{
-        margin-left: 30%;
-        }
-}
-
-@media (max-width:1999){
-.button_div{
-margin-left: 0%;
-}
-}
-
-
-
-
 td{
     width: 250px;
 }
@@ -46,7 +29,7 @@ td{
     margin-top: 20%;
     font-size: large;
     color: #292525;
-    width: 150px;
+    width: 200px;
     border-radius: 6px;
     height: 40px;
     border:none;
@@ -81,7 +64,8 @@ input{
     width: 70%;
     font-size: medium;
     border-width: 2px;
-    border-color: white;
+    border-color: rgb(235, 230, 230);
+    border-style: solid;
     box-shadow: 0px 6px 20px  rgb(124, 115, 115);
     border-radius: 5px;
     height: 30px;
@@ -272,13 +256,240 @@ html{
 
 
 footer {
-    position:relative;
+    position:absolute;
     clear: both;
     /* height: 200px; */
-    margin-top: 53%;
+    margin-bottom: 5%;
     /* left:0; */
-    /* bottom:0; */
+    bottom:0;
     /* top:90%; */
     width:100%;
     text-align: center;
   }
+
+  @media only screen and (max-width: 600px)
+{
+    .button_div{
+        margin-left: 5%;
+        }
+    input{
+            width: 90%;
+        }
+    .common_position{
+            top: 40%;
+            left: 60%;
+        }
+    .img_class{
+            width: 300px;
+        }
+
+        #btnGenerate{
+            width: 150px;
+        }
+        #btnUpload{
+            width: 150px;
+        }
+        #popup-window-generate{
+            height: 60%;
+        }
+
+}
+
+
+@media only screen and (min-width:200px) and (max-width: 350px){
+
+    body{
+        /* background-color:#de2a60; */
+    }
+
+    .button_div{
+        margin-left: 10%;
+        }
+    input{
+            width: 95%;
+            margin-left: 3%;
+            box-shadow:none;
+        }
+    .common_position{
+            top: 40%;
+            left: 50%;
+        }
+    .img_class{
+            width: 300px;
+        }
+
+        #btnGenerate{
+            width: 120px;
+        }
+        #btnUpload{
+            width: 120px;
+        }
+
+        #popup-window-generate{
+            height: 60%;
+        }
+
+        #popup-window-browse{
+            /* height: 10px; */
+        }
+
+}
+
+@media only screen and (min-width:412px) and (max-width: 600px){
+    body{
+        /* background-color:#2ade2a; */
+    }
+
+    .button_div{
+        margin-left: 17%;
+        }
+    input{
+            width: 90%;
+            margin-left: 10px;
+            box-shadow:none;
+        }
+    .common_position{
+            top: 40%;
+            left: 50%;
+        }
+    .img_class{
+            width: 300px;
+        }
+
+        #btnGenerate{
+            width: 150px;
+        }
+        #btnUpload{
+            width: 150px;
+        }
+
+        #popup-window-generate{
+            height: 60%;
+        }
+
+        #popup-window-browse{
+            /* height: 10px; */
+        }
+}
+
+@media only screen and (min-width:351px) and (max-width: 411px){
+
+    body{
+        /* background-color:#2ade2a; */
+    }
+
+    .button_div{
+        margin-left: 8%;
+        }
+    input{
+            width: 90%;
+            margin-left: 10px;
+            box-shadow:none;
+        }
+    .common_position{
+            top: 40%;
+            left: 50%;
+        }
+    .img_class{
+            width: 300px;
+        }
+
+        #btnGenerate{
+            width: 150px;
+        }
+        #btnUpload{
+            width: 150px;
+        }
+
+        #popup-window-generate{
+            height: 60%;
+        }
+
+        #popup-window-browse{
+            /* height: 10px; */
+        }
+}
+
+
+@media only screen and (min-width:601px) and (max-width: 900px){
+
+
+    .button_div{
+        margin-left: 25%;
+        }
+    input{
+            width: 80%;
+        }
+    .common_position{
+            top: 40%;
+            left: 50%;
+        }
+    .img_class{
+            width: 300px;
+        }
+
+        #btnGenerate{
+            width: 150px;
+        }
+        #btnUpload{
+            width: 150px;
+        }
+        #popup-window-generate{
+            height: 60%;
+        }
+
+}
+
+@media only screen and (min-width:901px) and (max-width: 1000px){
+    .button_div{
+        margin-left: 27%;
+        }
+    input{
+            width: 80%;
+        }
+    .common_position{
+            top: 40%;
+            left: 50%;
+        }
+    .img_class{
+            width: 300px;
+        }
+
+        #btnGenerate{
+            width: 200px;
+        }
+        #btnUpload{
+            width: 200px;
+        }
+        #popup-window-generate{
+            height: 60%;
+        }
+}
+
+@media only screen and (min-width:1001px) and (max-width: 1300px){
+    .button_div{
+        margin-left: 27%;
+        }
+    input{
+            width: 80%;
+        }
+    .common_position{
+            top: 40%;
+            left: 50%;
+        }
+    .img_class{
+            width: 300px;
+        }
+
+        #btnGenerate{
+            width: 200px;
+        }
+        #btnUpload{
+            width: 200px;
+        }
+        #popup-window-generate{
+            height: 60%;
+        }
+}
+
+
