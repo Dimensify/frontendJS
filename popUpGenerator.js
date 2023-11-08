@@ -4,8 +4,7 @@
   var popupWindowGen = document.getElementById("popup-window-generate");
   var popupBtn = document.getElementById("btnGenerate");
   popupBtn.addEventListener("click", function(event) {
-    // popupWindow.style.display = "block";
-    popupWindowGen.style.display = 'flex';
+    // popupWindowGen.style.display = 'flex';
   });
 
   var popupBrowse=document.getElementById("popup-window-browse");
@@ -18,6 +17,7 @@
   var closeButtonGen = document.getElementById("close-button-gen");
 
   closeButtonGen.addEventListener("click", function() {
+    prevImg.remove();
     popupWindowGen.style.display = "none";
   });
 
@@ -29,6 +29,11 @@
     popupBrowse.style.display = "none";
   });
 
+  var closeButtonWait = document.getElementById("close-button-wait");
+
+  closeButtonWait.addEventListener("click", function() {
+    popUp_waiting.style.display = "none";
+  });
 
 
   const dragArea = document.querySelector('.drag-area');
@@ -56,10 +61,15 @@
     displayImage();
   });
 
+  let imageTagBro;
   function displayImage(){
     let filetype = file.type;
+
+    generatetheModelFromImage(file);
     // console.log(file);
     let validExtensions =['image/jpeg','image/png','image/jpg'];
+
+    generatetheModelFromImage(file);
 
     if(validExtensions.includes(filetype)){
       let fileReader = new FileReader();
@@ -68,7 +78,7 @@
       fileReader.onload = ()=>{
         let fileURL = fileReader.result;
         console.log("URL:"+fileURL);
-        let imageTag = `<img src="${fileURL}" alt="">`;
+        imageTagBro = `<img src="${fileURL}" alt="">`;
         dragArea.innerHTML= imageTag;
       };
 

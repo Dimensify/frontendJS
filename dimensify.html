@@ -8,7 +8,7 @@
     
 <div class="common_position">
     <div>
-        <img src="assets/Dimensify_logo_orange_cropped.png"  class="img_class" >
+        <img src="assets/Dimensify_logo_orange_cropped.png"  class="img_class" />
      </div>
     <input id = "input_desc" placeholder="describe your model">
     <p style="margin-top: 20px;">describe your model or upload an image</p>
@@ -45,6 +45,14 @@
         <button type="button" class="close-button" id="close-button-bro">X</button>
 
 </div>   
+
+<div id="popup-window_waitingBox", class="popup-window">
+    <div class="drag-area">
+        <p>Generating the image estimated time is 6 minutes!</p>
+    </div>
+    <button type="button" class="close-button" id="close-button-bro">X</button>
+
+</div>   
 <!-- </div> -->
 
 <footer>
@@ -54,4 +62,5 @@
 </body>
 </html>
 
+<script src = "api.js"></script>
 <script src="popUpGenerator.js"></script>  

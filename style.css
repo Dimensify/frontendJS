@@ -146,6 +146,7 @@ html{
   }
 
   #popup-window-generate{
+    text-align: center;
     box-sizing: border-box;
     width: 80%;
     height:80%;
