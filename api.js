@@ -8,7 +8,10 @@ let prevImg;
 
 function displayGif(xhr) {
 
-    imageTagBro.remove();
+    var toRemove = document.getElementById('uploadImg');
+    if(toRemove)
+      toRemove.parentNode.removeChild(toRemove);
+
     popupWindowGen.style.display = 'flex';
 
     const contentType = xhr.getResponseHeader('content-type');
@@ -136,12 +139,16 @@ function generatetheModelFromImage(fileURL) {
 
 function generatetheModelFromText(desc) {
 
+    if(desc){
+
+   
+
     const url = 'http://dimensifynlb-2be116852e17ef5a.elb.us-east-1.amazonaws.com:8000/process-text-json/';
     let xhr = new XMLHttpRequest()
     xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xhr.setRequestHeader('accept', 'application/json')
-    xhr.send('text=' + desc);
+    // xhr.send('text=' + desc);
     // alert("Estimated time for model creation is 6 minutes");
     popUp_waiting.style.display = "flex";
     let gifPath;
@@ -157,6 +164,8 @@ function generatetheModelFromText(desc) {
             console.log("Resposne is : " + gifPath + "," + zipPath);
             getGif(gifPath);
         }
+    } } else{
+        alert('please describe how the model should look like!')
     }
 
 }

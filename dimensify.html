@@ -43,17 +43,29 @@
              <div class="support">supports: jpeg, jpg, png</div>
         </div>
         <button type="button" class="close-button" id="close-button-bro">X</button>
+        <button  id="btnGenerateBro">Generate</button>
 
 </div>   
 
 <div id="popup-window_waitingBox", class="popup-window">
-    <div class="drag-area">
-        <p>Generating the image estimated time is 6 minutes!</p>
-    </div>
-    <button type="button" class="close-button" id="close-button-bro">X</button>
+
+
+        <div class='container'>
+            <p style="text-align: center; font-family: 'Times New Roman', Times, serif;color: #ea0b38;">Estimated time for the model generation is 6 minutes!</p>
+            <div class='loader'>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--text'></div>
+            </div>
+          </div>
+          
+    <button type="button" class="close-button" id="close-button-wait">X</button>
 
 </div>   
-<!-- </div> -->
 
 <footer>
     <p style="color: black;">Copyright © 2023 Eurosys Informatics GmbH. All rights reserved.</p>
