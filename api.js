@@ -9,8 +9,8 @@ let prevImg;
 function displayGif(xhr) {
 
     var toRemove = document.getElementById('uploadImg');
-    if(toRemove)
-      toRemove.parentNode.removeChild(toRemove);
+    if (toRemove)
+        toRemove.parentNode.removeChild(toRemove);
 
     popupWindowGen.style.display = 'flex';
 
@@ -100,71 +100,80 @@ let zipPath;
 
 popUp_waiting = document.getElementById("popup-window_waitingBox");
 
+let modelInCreation = false;
+
 function generatetheModelFromImage(fileURL) {
-    const url = 'http://dimensifynlb-2be116852e17ef5a.elb.us-east-1.amazonaws.com:8000/upload-image-json/';
-    let xhr = new XMLHttpRequest()
-    xhr.open('POST', url, true);
-    // xhr.setRequestHeader('Content-Type', 'multipart/form-data')
-    xhr.setRequestHeader('accept', 'application/json')
 
-    // let image = fileURL.substring(23);
-    // alert(image);
-
-    const formData = new FormData();
-    formData.append('image', fileURL);
-
-    xhr.send(formData);
-    // alert("Estimated time for model creation is 6 minutes");
-
-
-    popUp_waiting.style.display = "flex";
-    popupBrowse.style.display='none';
-    let gifPath;
-    xhr.onload = function () {
-        alert("response arrived for process text")
-        // responseArraived=true;
-        if (xhr.status === 200) {
-            popUp_waiting.style.display = "none";
-            var jsonResponse = JSON.parse(xhr.responseText);
-            console.log("logging the reponse:" + jsonResponse['gif_path'], " + " + jsonResponse['zip_path']);
-            gifPath = jsonResponse['gif_path'];
-            zipPath = jsonResponse['zip_path'];
-            console.log("Resposne is : " + gifPath + "," + zipPath);
-            getGif(gifPath);
-        }
+    if(modelInCreation){
+        alert('A model is in creation please try after sometime!')
+        return;
     }
+    if (fileURL) {
+        modelInCreation = true;
+        const url = 'http://dimensifynlb-2be116852e17ef5a.elb.us-east-1.amazonaws.com:8000/upload-image-json/';
+        let xhr = new XMLHttpRequest()
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('accept', 'application/json')
 
 
+        const formData = new FormData();
+        formData.append('image', fileURL);
+
+        xhr.send(formData);
+
+
+        popUp_waiting.style.display = "flex";
+        popupBrowse.style.display = 'none';
+        let gifPath;
+        xhr.onload = function () {
+            alert("response arrived for process text")
+              modelInCreation = false;
+            if (xhr.status === 200) {
+                popUp_waiting.style.display = "none";
+                var jsonResponse = JSON.parse(xhr.responseText);
+                console.log("logging the reponse:" + jsonResponse['gif_path'], " + " + jsonResponse['zip_path']);
+                gifPath = jsonResponse['gif_path'];
+                zipPath = jsonResponse['zip_path'];
+                console.log("Resposne is : " + gifPath + "," + zipPath);
+                getGif(gifPath);
+            }
+        }
+
+    } else {
+        alert('Please upload an image');
+    }
 }
 
+
 function generatetheModelFromText(desc) {
-
-    if(desc){
-
-   
-
-    const url = 'http://dimensifynlb-2be116852e17ef5a.elb.us-east-1.amazonaws.com:8000/process-text-json/';
-    let xhr = new XMLHttpRequest()
-    xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
-    xhr.setRequestHeader('accept', 'application/json')
-    xhr.send('text=' + desc);
-    // alert("Estimated time for model creation is 6 minutes");
-    popUp_waiting.style.display = "flex";
-    let gifPath;
-    xhr.onload = function () {
-        popUp_waiting.style.display = 'none';
-        console.log("response arrived for process text");
-        // responseArraived=true;
-        if (xhr.status === 200) {
-            var jsonResponse = JSON.parse(xhr.responseText);
-            console.log("logging the reponse:" + jsonResponse['gif_path'], " + " + jsonResponse['zip_path']);
-            gifPath = jsonResponse['gif_path'];
-            zipPath = jsonResponse['zip_path'];
-            console.log("Resposne is : " + gifPath + "," + zipPath);
-            getGif(gifPath);
+    if(modelInCreation){
+        alert('A model is in creation please try after sometime!')
+        return;
+    }
+    if (desc) {
+        modelInCreation = true;
+        const url = 'http://dimensifynlb-2be116852e17ef5a.elb.us-east-1.amazonaws.com:8000/process-text-json/';
+        let xhr = new XMLHttpRequest()
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+        xhr.setRequestHeader('accept', 'application/json')
+        xhr.send('text=' + desc);
+        popUp_waiting.style.display = "flex";
+        let gifPath;
+        xhr.onload = function () {
+            popUp_waiting.style.display = 'none';
+            console.log("response arrived for process text");
+            modelInCreation = false;
+            if (xhr.status === 200) {
+                var jsonResponse = JSON.parse(xhr.responseText);
+                console.log("logging the reponse:" + jsonResponse['gif_path'], " + " + jsonResponse['zip_path']);
+                gifPath = jsonResponse['gif_path'];
+                zipPath = jsonResponse['zip_path'];
+                console.log("Resposne is : " + gifPath + "," + zipPath);
+                getGif(gifPath);
+            }
         }
-    } } else{
+    } else {
         alert('please describe how the model should look like!')
     }
 
@@ -179,11 +188,9 @@ function getGif(gifPath) {
     xhr.setRequestHeader('accept', 'application/json')
     xhr.responseType = 'arraybuffer';
     xhr.send('file_path=' + gifPath);
-    // displayGif(xhr.response);
 
     xhr.onload = function () {
-        // alert("response arrived for render gif") //this method is called only when response arrives
-        // responseArraived=true;
+
         if (xhr.status === 200) {
             console.log(xhr);
             displayGif(xhr);
