@@ -148,7 +148,7 @@ function generatetheModelFromText(desc) {
     xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xhr.setRequestHeader('accept', 'application/json')
-    // xhr.send('text=' + desc);
+    xhr.send('text=' + desc);
     // alert("Estimated time for model creation is 6 minutes");
     popUp_waiting.style.display = "flex";
     let gifPath;
