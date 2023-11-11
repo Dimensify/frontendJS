@@ -1,5 +1,6 @@
 
 
+const url = "https://backend.dimensify.ai"
 
 
 let gifPopUp = document.getElementById('popup-window-generate');
@@ -110,9 +111,9 @@ function generatetheModelFromImage(fileURL) {
     }
     if (fileURL) {
         modelInCreation = true;
-        const url = 'http://dimensifynlb-2be116852e17ef5a.elb.us-east-1.amazonaws.com:8000/upload-image-json/';
+        urlFromImage  = url +  '/upload-image-json/';
         let xhr = new XMLHttpRequest()
-        xhr.open('POST', url, true);
+        xhr.open('POST', urlFromImage, true);
         xhr.setRequestHeader('accept', 'application/json')
 
 
@@ -152,9 +153,9 @@ function generatetheModelFromText(desc) {
     }
     if (desc) {
         modelInCreation = true;
-        const url = 'http://dimensifynlb-2be116852e17ef5a.elb.us-east-1.amazonaws.com:8000/process-text-json/';
+        const urlFromText = url + '/process-text-json/';
         let xhr = new XMLHttpRequest()
-        xhr.open('POST', url, true);
+        xhr.open('POST', urlFromText, true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
         xhr.setRequestHeader('accept', 'application/json')
         xhr.send('text=' + desc);
@@ -181,9 +182,9 @@ function generatetheModelFromText(desc) {
 
 function getGif(gifPath) {
 
-    const url = 'http://dimensifynlb-2be116852e17ef5a.elb.us-east-1.amazonaws.com:8000/render-gif/';
+    const urlGetGif =  url +'/render-gif/';
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', url, true);
+    xhr.open('POST', urlGetGif, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xhr.setRequestHeader('accept', 'application/json')
     xhr.responseType = 'arraybuffer';

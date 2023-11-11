@@ -11,8 +11,9 @@ var popupBrowse = document.getElementById("popup-window-browse");
 var uploadBtn = document.getElementById("btnUpload");
 uploadBtn.addEventListener("click", function (event) {
   var toRemove = document.getElementById('uploadImg');
-  if(toRemove)
+  if(toRemove){
     toRemove.parentNode.removeChild(toRemove);
+  }
   popupBrowse.style.display = 'flex';
 });
 
@@ -43,7 +44,7 @@ const dragArea = document.querySelector('.drag-area');
 
 const dragText = document.querySelector('.drag-drop-header');
 
-
+let file;
 dragArea.addEventListener('dragover', function (event) {
   event.preventDefault();
   console.log("file dragged");
@@ -94,6 +95,7 @@ var btnGenImageBro = document.getElementById("btnGenerateBro");
 
 if (btnGenImageBro)
 btnGenImageBro.addEventListener('click', function () {
+  if(file)
     generatetheModelFromImage(file);
   });
 
@@ -117,5 +119,15 @@ inputField = document.getElementById("input_desc");
   inputField.style.border="1px solid red";
  
 });*/
+
+
+btnWizard = document.getElementById('btnWizard');
+
+  btnWizard.addEventListener('hover',function(){
+    alert('click');
+    let img_not = document.getElementById('img_not');
+    img_not.src= "assets/wizard-fotor-meta.png";
+  });
+
 
 

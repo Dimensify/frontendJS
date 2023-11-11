@@ -15,6 +15,21 @@ body{
     /* left:400px; */
 }
 
+#btnWizard{
+  position: absolute;
+  top:8%;
+  right:5%;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+}
+
+
+#img_not{ 
+  width:80px;
+}
+
 .button_div{
     width: 50%;
     margin-left: 30%;
@@ -39,8 +54,10 @@ td{
 }
 
 #btnGenerateBro{
-    height:50px;
+    height:100px;
     margin-left: 40%;
+    align-items: center;
+    margin-bottom: 5%;
 }
 
 
@@ -54,7 +71,7 @@ td{
 
 
 .common_position button:hover,#btnGenerateBro:hover{
-    background-image: linear-gradient(to bottom right,#ef6c3c,#de2a60)!important;;
+    background-image: linear-gradient(to bottom right,#ef6c3c,#de2a60)!important;
     color: white;
     opacity: 90%;
     cursor: pointer;
@@ -182,6 +199,7 @@ html{
     left: 0;
     right: 0;
     overflow: auto;
+
   }
 
   #popup-window_waitingBox{
@@ -191,7 +209,7 @@ html{
     border-radius: 10px;
   }
 
-#browse-button{
+#browse-button,#library-button{
     /* font-size: large; */
     font-weight: bold;
     font-size: medium;
@@ -202,11 +220,13 @@ html{
     border: none;
     height: 30px;
     border-radius: 2px;
+    cursor: pointer;
 }
 
-#browse-button:hover{
+#browse-button:hover,#library-button:hover{
     background-color: #852704;
     color: rgb(182, 166, 166);
+
 }
 
 .browse-header{
@@ -306,6 +326,14 @@ footer {
             height: 60%;
         }
 
+        #btnGenerateBro{
+          height:40px;
+          width: 150px;
+          margin-left: 25%;
+          margin-bottom: 5%;
+      }
+      
+
 }
 
 
@@ -345,6 +373,13 @@ footer {
         #popup-window-browse{
             /* height: 10px; */
         }
+
+        #btnGenerateBro{
+          height:30px;
+          width: 100px;
+          margin-left: 30%;
+          margin-bottom: 5%;
+      }
 
 }
 
@@ -454,6 +489,14 @@ footer {
             height: 60%;
         }
 
+        #btnGenerateBro{
+          height:40px;
+          width: 150px;
+          margin-left: 35%;
+          margin-bottom: 5%;
+      }
+      
+
 }
 
 @media only screen and (min-width:901px) and (max-width: 1000px){
@@ -480,6 +523,13 @@ footer {
         #popup-window-generate{
             height: 60%;
         }
+
+        #btnGenerateBro{
+          height:40px;
+          width: 150px;
+          margin-left: 35%;
+          margin-bottom: 5%;
+      }
 }
 
 @media only screen and (min-width:1001px) and (max-width: 1300px){
@@ -506,6 +556,13 @@ footer {
         #popup-window-generate{
             height: 60%;
         }
+
+        #btnGenerateBro{
+          height:40px;
+          width: 150px;
+          margin-left: 35%;
+          margin-bottom: 5%;
+      }
 }
 
 
