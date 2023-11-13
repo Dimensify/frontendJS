@@ -1,6 +1,8 @@
 
 
-const url = "https://backend.dimensify.ai"
+// const url = "https://backend.dimensify.ai"
+
+
 
 
 let gifPopUp = document.getElementById('popup-window-generate');
@@ -88,12 +90,10 @@ const btn_gen = document.getElementById('btnGenerate');
 
 btn_gen.addEventListener('click', function () {
     var desc = document.getElementById('input_desc').value;
-    // if(responseArraived==false)
-    // alert(desc);
-    // else
+
     generatetheModelFromText(desc);
-    // readFile();
-    // getGif("output/anindiangirl.gif");
+    // dummy(desc);
+  
 });
 
 
@@ -111,10 +111,11 @@ function generatetheModelFromImage(fileURL) {
     }
     if (fileURL) {
         modelInCreation = true;
-        urlFromImage  = url +  '/upload-image-json/';
+        urlFromImage  = url_ +  '/upload-image-json/';
         let xhr = new XMLHttpRequest()
         xhr.open('POST', urlFromImage, true);
-        xhr.setRequestHeader('accept', 'application/json')
+        xhr.setRequestHeader('accept', 'application/json');
+        xhr.timeout=timeout;
 
 
         const formData = new FormData();
@@ -153,11 +154,12 @@ function generatetheModelFromText(desc) {
     }
     if (desc) {
         modelInCreation = true;
-        const urlFromText = url + '/process-text-json/';
+        const urlFromText = url_ + '/process-text-json/';
         let xhr = new XMLHttpRequest()
         xhr.open('POST', urlFromText, true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
         xhr.setRequestHeader('accept', 'application/json')
+        xhr.timeout=timeout;
         xhr.send('text=' + desc);
         popUp_waiting.style.display = "flex";
         let gifPath;
@@ -182,12 +184,13 @@ function generatetheModelFromText(desc) {
 
 function getGif(gifPath) {
 
-    const urlGetGif =  url +'/render-gif/';
+    const urlGetGif =  url_ +'/render-gif/';
     let xhr = new XMLHttpRequest();
     xhr.open('POST', urlGetGif, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xhr.setRequestHeader('accept', 'application/json')
     xhr.responseType = 'arraybuffer';
+    xhr.timeout=timeout;
     xhr.send('file_path=' + gifPath);
 
     xhr.onload = function () {
@@ -201,4 +204,31 @@ function getGif(gifPath) {
 
 
 
+
+function dummy(desc){
+
+
+      const url = url_+ '/dummy_method/';
+      let xhr = new XMLHttpRequest()
+      xhr.open('POST', url, true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+      xhr.setRequestHeader('accept', 'application/json')
+      xhr.timeout=timeout;
+      xhr.send('text='+desc);
+      console.log('sending request');
+      xhr.onload = function () {
+          if(xhr.status === 200) {
+              alert(xhr.response);
+              
+              var jsonResponse = JSON.parse(xhr.responseText);
+              console.log("logging the reponse:"+ jsonResponse['res']," + "+jsonResponse['done']);
+  
+               gifPath = jsonResponse['res'];
+               zipPath = jsonResponse['done'];
+             
+          }
+      }
+
+
+}
 
