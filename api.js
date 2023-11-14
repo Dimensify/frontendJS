@@ -103,6 +103,8 @@ popUp_waiting = document.getElementById("popup-window_waitingBox");
 
 let modelInCreation = false;
 
+
+
 function generatetheModelFromImage(fileURL) {
 
     if(modelInCreation){
@@ -160,7 +162,9 @@ function generatetheModelFromText(desc) {
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
         xhr.setRequestHeader('accept', 'application/json')
         xhr.timeout=timeout;
+        console.log('Sending the request to :'+url_);
         xhr.send('text=' + desc);
+  
         popUp_waiting.style.display = "flex";
         let gifPath;
         xhr.onload = function () {
