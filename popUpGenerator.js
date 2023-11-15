@@ -7,11 +7,15 @@ popupBtn.addEventListener("click", function (event) {
   // popupWindowGen.style.display = 'flex';
 });
 
+var inputField = document.getElementById("input_desc");
 var popupBrowse = document.getElementById("popup-window-browse");
 var uploadBtn = document.getElementById("btnUpload");
 uploadBtn.addEventListener("click", function (event) {
+
+  inputField.value = "";
+
   var toRemove = document.getElementById('uploadImg');
-  if(toRemove){
+  if (toRemove) {
     toRemove.parentNode.removeChild(toRemove);
   }
   popupBrowse.style.display = 'flex';
@@ -94,9 +98,13 @@ function displayImage() {
 var btnGenImageBro = document.getElementById("btnGenerateBro");
 
 if (btnGenImageBro)
-btnGenImageBro.addEventListener('click', function () {
-  if(file)
-    generatetheModelFromImage(file);
+  btnGenImageBro.addEventListener('click', function () {
+if(testMode)
+{
+  dummy("dummy");
+}else {
+    if (file)
+      generatetheModelFromImage(file);}
   });
 
 
@@ -113,7 +121,7 @@ fileInput.addEventListener('change', function () {
   displayImage();
 });
 
-inputField = document.getElementById("input_desc");
+
 
 /*inputField.addEventListener('focus' , function(){
   inputField.style.border="1px solid red";
@@ -123,11 +131,11 @@ inputField = document.getElementById("input_desc");
 
 btnWizard = document.getElementById('btnWizard');
 
-  btnWizard.addEventListener('hover',function(){
-    alert('click');
-    let img_not = document.getElementById('img_not');
-    img_not.src= "assets/wizard-fotor-meta.png";
-  });
+btnWizard.addEventListener('hover', function () {
+  alert('click');
+  let img_not = document.getElementById('img_not');
+  img_not.src = "assets/wizard-fotor-meta.png";
+});
 
 
 

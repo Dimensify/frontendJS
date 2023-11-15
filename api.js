@@ -4,7 +4,6 @@
 
 
 
-
 let gifPopUp = document.getElementById('popup-window-generate');
 
 let prevImg;
@@ -65,16 +64,6 @@ function readFile_(file) {
         // You can now use the fileContents as needed, e.g., display it on the page or process it further.
         console.log(fileContents);
 
-        // var image = new Image();
-        // const urlCreator = window.URL || window.webkitURL;
-        // urlCreator.revokeObjectURL(gifUrl)
-        // const gifBlob = new Blob([fileContents], { type: 'image/gif' });
-        // let gifUrl = urlCreator.createObjectURL(gifBlob);
-        //image.src = gifUrl;
-        // alert(gifUrl);
-        // document.body.appendChild(image);
-        // image.one('load', (e) => { urlCreator.revokeObjectURL(gifUrl); });
-
         displayGif(fileContents);
 
     }
@@ -91,9 +80,12 @@ const btn_gen = document.getElementById('btnGenerate');
 btn_gen.addEventListener('click', function () {
     var desc = document.getElementById('input_desc').value;
 
-    generatetheModelFromText(desc);
-    // dummy(desc);
-  
+    if(testMode){
+        dummy(desc);
+    } else {
+        generatetheModelFromText(desc);
+    }
+   
 });
 
 
@@ -167,7 +159,8 @@ function generatetheModelFromText(desc) {
   
         popUp_waiting.style.display = "flex";
         let gifPath;
-        xhr.onload = function () {
+        xhr.onload = function () 
+        {
             popUp_waiting.style.display = 'none';
             console.log("response arrived for process text");
             modelInCreation = false;
@@ -178,8 +171,8 @@ function generatetheModelFromText(desc) {
                 zipPath = jsonResponse['zip_path'];
                 console.log("Resposne is : " + gifPath + "," + zipPath);
                 getGif(gifPath);
-            }
-        }
+            // }
+        }}
     } else {
         alert('please describe how the model should look like!')
     }
@@ -190,11 +183,11 @@ function getGif(gifPath) {
 
     const urlGetGif =  url_ +'/render-gif/';
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', urlGetGif, true);
+    xhr.open('POST', urlGetGif, false);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xhr.setRequestHeader('accept', 'application/json')
     xhr.responseType = 'arraybuffer';
-    xhr.timeout=timeout;
+    // xhr.timeout=timeout;
     xhr.send('file_path=' + gifPath);
 
     xhr.onload = function () {
@@ -214,10 +207,10 @@ function dummy(desc){
 
       const url = url_+ '/dummy_method/';
       let xhr = new XMLHttpRequest()
-      xhr.open('POST', url, true);
+      xhr.open('POST', url, false);
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
       xhr.setRequestHeader('accept', 'application/json')
-      xhr.timeout=timeout;
+    //   xhr.timeout=timeout;
       xhr.send('text='+desc);
       console.log('sending request');
       xhr.onload = function () {
