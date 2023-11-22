@@ -130,12 +130,15 @@ fileInput.addEventListener('change', function () {
 
 
 btnWizard = document.getElementById('btnWizard');
+img = document.getElementsByClassName('img_wiz');
 
 btnWizard.addEventListener('hover', function () {
   alert('click');
-  let img_not = document.getElementById('img_not');
-  img_not.src = "assets/wizard-fotor-meta.png";
+ img.src = "./assets/wizard-fotor-meta.jpg";
+
 });
+
+
 
 
 

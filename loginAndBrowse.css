@@ -1,0 +1,377 @@
+.img_logo {
+    width: 200px;
+    left: 5%;
+    top: 8%;
+    position: absolute;
+}
+
+.img_wiz {
+    width: 80px;
+    height: 70px;
+    right: 5%;
+    top: 8%;
+    position: absolute;
+}
+
+
+
+.img_wiz:hover {
+    background: linear-gradient(to right, black, rgb(45, 43, 43));
+
+    cursor: pointer;
+}
+
+
+
+.left_part {
+    width: 50%;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    color: black;
+}
+
+.right_part {
+    width: 50%;
+    right: 0;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    color: white;
+}
+
+.left_part h3 {
+    top: 40%;
+    position: relative;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+}
+
+.left_part table {
+    top: 40%;
+    position: relative;
+    left: 28%;
+
+}
+
+.left_part table button {
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: medium;
+    /* font-weight: bold; */
+    /* font-family: 'Courier New', Courier, monospace; */
+}
+
+
+.left_part table button:hover{
+
+    background: linear-gradient(to right, #ef6c3c, #c40740);
+    cursor: pointer;
+    border-color: white;
+
+}
+.left_part table #btn_signup {
+    margin-left: 5%;
+}
+
+.right_part h3 {
+    top: 40%;
+    position: relative;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+}
+
+.right_part h3 button {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    height: 40px;
+    font-size: large;
+    border-radius: 5px;
+    background: linear-gradient(to right, #ef6c3c, #c40740);
+
+}
+
+.right_part h3 button:hover {
+    background: white;
+    color: #dd410e;
+    cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #dd410e;
+    ;
+}
+
+footer a {
+    color: rgb(36, 102, 151);
+}
+
+footer a:hover {
+    color: rgb(68, 80, 128);
+}
+
+
+@media only screen and (max-width: 300px) {
+    .img_logo {
+        width: 100px;
+        left: 5%;
+        top: 8%;
+        position: absolute;
+    }
+
+
+    .left_part h3 {
+        top: 40%;
+        position: relative;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: smaller;
+    }
+
+    .left_part table {
+        top: 40%;
+        position: relative;
+        left: 2%;
+
+    }
+
+    .left_part table button {
+        width: 60px;
+        height: 20px;
+        border-radius: 6px;
+        font-size: x-small;
+
+    }
+
+    .left_part table #btn_signup {
+        margin-left: 2%;
+    }
+
+    .right_part h3 {
+        top: 40%;
+        position: relative;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: smaller;
+    }
+
+    .right_part h3 button {
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        height: 20px;
+        font-size: smaller;
+        border-radius: 5px;
+        background: linear-gradient(to right, #ef6c3c, #c40740);
+
+    }
+}
+
+@media only screen and (min-width:301px) and (max-width: 450px) {
+
+    .img_logo {
+        width: 150px;
+        left: 5%;
+        top: 8%;
+        position: absolute;
+    }
+
+    .left_part h3 {
+        top: 40%;
+        position: relative;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: smaller;
+    }
+
+    .left_part table {
+        top: 40%;
+        position: relative;
+        left: 7%;
+
+    }
+
+    .left_part table button {
+        width: 75px;
+        height: 30px;
+        border-radius: 6px;
+        font-size: smaller;
+
+    }
+
+    .left_part table #btn_signup {
+        margin-left: 2%;
+    }
+
+    .right_part h3 {
+        top: 40%;
+        position: relative;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: small;
+    }
+
+    .right_part h3 button {
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        height: 30px;
+        font-size: small;
+        border-radius: 5px;
+        background: linear-gradient(to right, #ef6c3c, #c40740);
+
+    }
+
+
+}
+
+@media only screen and (min-width:451) and (max-width: 750px) {
+
+
+    .img_logo {
+        width: 150px;
+        left: 5%;
+        top: 8%;
+        position: absolute;
+    }
+
+
+    .left_part h3 {
+        top: 40%;
+        position: relative;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: medium;
+    }
+
+    .left_part table {
+        top: 40%;
+        position: relative;
+        left: 5%;
+
+    }
+
+    .left_part table button {
+        width: 80px;
+        height: 30px;
+        border-radius: 6px;
+        font-size: medium;
+
+    }
+
+    .left_part table #btn_signup {
+        margin-left: 2%;
+    }
+
+    .right_part h3 {
+        top: 40%;
+        position: relative;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: medium;
+    }
+
+    .right_part h3 button {
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        height: 30px;
+        font-size: medium;
+        border-radius: 5px;
+        background: linear-gradient(to right, #ef6c3c, #c40740);
+
+    }
+
+
+}
+
+@media only screen and (min-width: 751px) and (max-width: 1250px) {
+    .img_logo {
+        width: 300px;
+        left: 5%;
+        top: 8%;
+        position: absolute;
+    }
+
+
+    .left_part h3 {
+        top: 40%;
+        position: relative;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: x-large;
+    }
+
+    .left_part table {
+        top: 40%;
+        position: relative;
+        left: 20%;
+
+    }
+
+    .left_part table button {
+        width: 120px;
+        height: 40px;
+        border-radius: 6px;
+        font-size: medium;
+
+    }
+
+    .left_part table #btn_signup {
+        margin-left: 2%;
+    }
+
+    .right_part h3 {
+        top: 40%;
+        position: relative;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: x-large;
+    }
+
+    .right_part h3 button {
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        height: 40px;
+        font-size: x-large;
+        border-radius: 5px;
+        background: linear-gradient(to right, #ef6c3c, #c40740);
+
+    }
+}
+
+@media only screen and (min-width: 1251px) and (max-width: 1300px) {
+    .img_logo {
+        width: 300px;
+        left: 5%;
+        top: 8%;
+        position: absolute;
+    }
+
+    .left_part h3 {
+        top: 40%;
+        position: relative;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: x-large;
+    }
+
+    .left_part table {
+        top: 40%;
+        position: relative;
+        left: 25%;
+
+    }
+
+
+}

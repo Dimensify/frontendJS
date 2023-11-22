@@ -1,84 +1,91 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="./assets/favicon_io/favicon.ico">
 </head>
+
 <body>
-    <button id="btnWizard" type="submit"><img src="assets/wizard-fotor-2023111015369.jpg"  id="img_not" /></button>
-<div class="common_position">
-    <div>
-        <img src="assets/Dimensify_logo_orange_cropped.png"  class="img_class" />
-     </div>
-    <input id = "input_desc" placeholder="describe your model">
-    <p style="margin-top: 20px;">describe your model or upload an image</p>
-    <div class="button_div">
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <table>
-            <tr>
-                <td>
-                     <button  id="btnGenerate">Generate</button>
-                </td>
-                <td>
-                     <button id ="btnUpload">Upload</button>
-                </td>
-            </tr>
-         </table>
-    </div>      
-</div>
+    <div class="common_position">
+        <button id="btnWizard" type="submit"></button>
+        <img src="assets/Dimensify_logo_orange_cropped.png" class="img_class" />
 
-<div id="popup-window-generate", class="popup-window">
-    <button type="button" class="close-button" id="close-button-gen">X</button>
-</div>   
+        <input id="input_desc" placeholder="" class="input_desription">
+        <label for="input_desc"  class="input_label">Describe your model</label>
+        <p style="margin-top: 20px;">Describe your model or upload an image</p>
+        <div class="button_div">
+            <meta content="width=device-width, initial-scale=1" name="viewport" />
+            <table>
+                <tr>
+                    <td>
+                        <button id="btnGenerate">Generate</button>
+                    </td>
+                    <td>
+                        <button id="btnUpload">Upload</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
-<!-- <div class="warpper"> -->
-<div id="popup-window-browse", class="popup-window">
-    
+    <div id="popup-window-generate" , class="popup-window">
+        <button type="button" class="close-button" id="close-button-gen">X</button>
+    </div>
+
+    <!-- <div class="warpper"> -->
+    <div id="popup-window-browse" , class="popup-window">
+
         <p>Upload the Image</p>
         <div class="drag-area">
-             <div class="drag-drop-header">Drag & Drop</div>
-         
-             <div class="browse-header">or <button type="button"  id="browse-button">browse</button></div>
-             <input type="file" class="file-input" hidden/>
-             <div class="support">supports: jpeg, jpg, png</div>
+            <div class="drag-drop-header">Drag & Drop</div>
+
+            <div class="browse-header">or <button type="button" id="browse-button">browse</button></div>
+            <input type="file" class="file-input" hidden />
+            <div class="support">supports: jpeg, jpg, png</div>
         </div>
         <button type="button" class="close-button" id="close-button-bro">X</button>
-        <button  id="btnGenerateBro">Generate</button>
+        <button id="btnGenerateBro">Generate</button>
 
-</div>   
+    </div>
 
-<div id="popup-window_waitingBox", class="popup-window">
+    <div id="popup-window_waitingBox" , class="popup-window">
 
 
         <div class='container'>
-            <p style="text-align: center; font-family: 'Times New Roman', Times, serif;color: #080808;">Estimated time for the model generation is 6 minutes!</p>
-            <p style="text-align: center; font-family: 'Times New Roman', Times, serif;color: #080808;">Meanwhile you can browse our <button type="button"  id="library-button">Library</button></p>
-            <p style="text-align: center; font-family: 'Times New Roman', Times, serif;color: #080808;">You will be notified when model is created!</p>
+            <p style="text-align: center; font-family: 'Times New Roman', Times, serif;color: #080808;">Estimated time
+                for the model generation is 6 minutes!</p>
+            <p style="text-align: center; font-family: 'Times New Roman', Times, serif;color: #080808;">Meanwhile you
+                can browse our <button type="button" id="library-button">Library</button></p>
+            <p style="text-align: center; font-family: 'Times New Roman', Times, serif;color: #080808;">You will be
+                notified when model is created!</p>
             <div class='loader'>
-              <div class='loader--dot'></div>
-              <div class='loader--dot'></div>
-              <div class='loader--dot'></div>
-              <div class='loader--dot'></div>
-              <div class='loader--dot'></div>
-              <div class='loader--dot'></div>
-              <div class='loader--text'></div>
+                <div class='loader--dot'></div>
+                <div class='loader--dot'></div>
+                <div class='loader--dot'></div>
+                <div class='loader--dot'></div>
+                <div class='loader--dot'></div>
+                <div class='loader--dot'></div>
+                <div class='loader--text'></div>
             </div>
-          </div>
-          
-    <button type="button" class="close-button" id="close-button-wait">X</button>
+        </div>
 
-</div>   
+        <button type="button" class="close-button" id="close-button-wait">X</button>
 
-<footer>
-    <p style="color: black;">Copyright © 2023 Eurosys Informatics GmbH. All rights reserved.</p>
-    <p style="color: black"><a href="./Impression.html" target="_blank">Impressum</a> | <a href="./PrivacyPolicy.html" target="_blank">Privacy policy</a>  </p>
-</footer>
+    </div>
+
+    <footer>
+        <p style="color: black;">Copyright © 2023 Eurosys Informatics GmbH. All rights reserved.</p>
+        <p style="color: black"><a href="./Impression.html" target="_blank">Impressum</a> | <a
+                href="./PrivacyPolicy.html" target="_blank">Privacy policy</a> </p>
+    </footer>
 </body>
+
 </html>
 
 <!-- <script>const timeout = 75000</script> -->
-<script>const testMode = false</script>
-<script>const timeout = 400000</script>
+<script>const testMode = true</script>
+<script>const timeout = 800000</script>
 <script>const url_ = "https://backend.dimensify.ai"</script>
-<script src = "api.js"></script>
-<script src="popUpGenerator.js"></script>  
+<script src="api.js"></script>
+<script src="popUpGenerator.js"></script>

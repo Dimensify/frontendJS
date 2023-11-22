@@ -1,9 +1,5 @@
 
 
-// const url = "https://backend.dimensify.ai"
-
-
-
 let gifPopUp = document.getElementById('popup-window-generate');
 
 let prevImg;
@@ -154,7 +150,7 @@ function generatetheModelFromText(desc) {
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
         xhr.setRequestHeader('accept', 'application/json')
         xhr.timeout=timeout;
-        console.log('Sending the request to :'+url_);
+        console.log('Sending the request to :'+urlFromText);
         xhr.send('text=' + desc);
   
         popUp_waiting.style.display = "flex";
@@ -183,7 +179,7 @@ function getGif(gifPath) {
 
     const urlGetGif =  url_ +'/render-gif/';
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', urlGetGif, false);
+    xhr.open('POST', urlGetGif, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xhr.setRequestHeader('accept', 'application/json')
     xhr.responseType = 'arraybuffer';
@@ -207,7 +203,7 @@ function dummy(desc){
 
       const url = url_+ '/dummy_method/';
       let xhr = new XMLHttpRequest()
-      xhr.open('POST', url, false);
+      xhr.open('POST', url,true);
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
       xhr.setRequestHeader('accept', 'application/json')
     //   xhr.timeout=timeout;

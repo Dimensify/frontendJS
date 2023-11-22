@@ -1,10 +1,4 @@
 
-body{
- /* background-color: #f6f6f6; */
- background-color: white;
-
-}
-
 
 .img_class{
     margin-top: 10%;
@@ -15,19 +9,25 @@ body{
     /* left:400px; */
 }
 
+
 #btnWizard{
   position: absolute;
-  top:8%;
+  width:80px;
+  height: 70px;
+  top:5%;
   right:5%;
   border: none;
-  cursor: pointer;
-  appearance: none;
-  background-color: inherit;
+  background-image: url('./assets/wizard-fotor-2023111015369.jpg');
+ background-size: contain;
+}
+
+#btnWizard:hover{
+  background-image: url('./assets/wizard-fotor-meta.png');
 }
 
 
-#img_not{ 
-  width:80px;
+button{
+  cursor: pointer;
 }
 
 .button_div{
@@ -40,7 +40,7 @@ td{
     width: 250px;
 }
 
-.common_position  button,#btnGenerateBro{
+.common_position  button:not(#btnWizard),#btnGenerateBro{
     margin-top: 20%;
     font-size: large;
     color: #292525;
@@ -53,6 +53,10 @@ td{
     box-shadow: 0px 2px 5px  rgb(124, 115, 115);
 }
 
+.common_position_inner{
+
+  width: 400px;
+}
 #btnGenerateBro{
     height:100px;
     margin-left: 40%;
@@ -70,7 +74,7 @@ td{
 }
 
 
-.common_position button:hover,#btnGenerateBro:hover{
+.common_position button:not(#btnWizard):hover,#btnGenerateBro:hover{
     background-image: linear-gradient(to bottom right,#ef6c3c,#de2a60)!important;
     color: white;
     opacity: 90%;
@@ -85,15 +89,52 @@ input{
     /* margin-left: 50%; */
     width: 70%;
     font-size: medium;
-    border-width: 2px;
+   /* border-width: 2px;
     border-color: rgb(235, 230, 230);
     border-style: solid;
     box-shadow: 0px 6px 20px  rgb(124, 115, 115);
+    border-radius: 5px;*/
+    outline: none;
+    border-style: solid;
+    border-width: 2px;
     border-radius: 5px;
+    border-image-source: linear-gradient(to bottom right,#ef6c3c,#de2a60);
+    border-image-slice: 1;
+    box-shadow: none;
     height: 30px;
     padding: 10px;
     padding-left: 2%;
 }
+
+.input_label{
+  position: absolute;
+  left:15%;
+  top:63%;
+  padding: 0 0.5rem;
+  cursor: text;
+  transition: top 200ms ease-in,
+  left 200ms ease-in,
+  font-size 200ms ease-in;
+ 
+  font-size: large;
+  color: #e23e0c;
+  /*background: linear-gradient(to right ,#ef6c3c,#c40740);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;*/
+  background-color: white;
+  font-family:Arial, Helvetica, sans-serif
+}
+
+input:focus ~ .input_label,
+input:not(:placeholder-shown).input_desription:not(:focus) ~
+.input_label
+{
+    top:58%;
+    font-size:small;
+    left:15%;
+
+}
+
 
 
 input:focus {
@@ -104,7 +145,6 @@ input:focus {
     border-image-source: linear-gradient(to bottom right,#ef6c3c,#de2a60);
     border-image-slice: 1;
     box-shadow: none;
-  
 }
 
    /* background-image:linear-gradient(to bottom right,#ef6c3c,#de2a60)!important */
@@ -245,19 +285,6 @@ html{
 }
 
 
-
-/*input:focus {
-    outline: none;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 5px;
-    border-image-source: linear-gradient(to bottom right,#ef6c3c,#de2a60);
-    border-image-slice: 1;
-    box-shadow: none;
-  
-}*/
-
-
 .drag-area{
     text-align: center;
     height: 100%;
@@ -300,6 +327,7 @@ footer {
     text-align: center;
   }
 
+
   @media only screen and (max-width: 600px)
 {
     .button_div{
@@ -332,7 +360,9 @@ footer {
           margin-left: 25%;
           margin-bottom: 5%;
       }
-      
+      .input_label{
+        display: none;
+      }
 
 }
 
@@ -563,6 +593,10 @@ footer {
           margin-left: 35%;
           margin-bottom: 5%;
       }
+      .input_label{
+        display: none;
+      }
+    
 }
 
 

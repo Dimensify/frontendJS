@@ -116,7 +116,7 @@ img {
 
 
 
-#btn_try,.form-container>form>#btn_wait_list {
+#btn_try_redirect,#btn_try,.form-container>form>#btn_wait_list {
     background-image: linear-gradient(to right, black, rgb(45, 43, 43));
     /* position: absolute; */
     color: white;
@@ -134,7 +134,7 @@ img {
     
 }
 
-#btn_try:hover,.form-container>form>#btn_wait_list:hover{
+#btn_try_redirect:hover, #btn_try:hover,.form-container>form>#btn_wait_list:hover{
     background-image: linear-gradient(to right, black,black);
     color: #00FF41;
     border: none;
