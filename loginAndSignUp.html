@@ -2,11 +2,14 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="loginAndSignUp.css">
+    <link rel="stylesheet" href="./loginAndSignUp.css">
     <link rel="icon" type="image/x-icon" href="./assets/favicon_io/favicon.ico">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+    <!-- <meta name="google-signin-client_id" content="173272391799-kk1tuobrr91v4s8lj2t5t59kvh2t4pch.apps.googleusercontent.com"> -->
+    <meta Content-Security-Policy-Report-Only: script-src https://accounts.google.com/gsi/client; frame-src
+                https://accounts.google.com/gsi/; connect-src https://accounts.google.com/gsi/; />
 <body>
     <!-- <h3>Create your account</h3> -->
     <div class="container">
@@ -17,29 +20,38 @@
             <button class="btn_continue">Continue</button>
         </div>
         <div class="already_login">
-            <p>Already have an account?
+            <p>
+                Already have an account?
                 <a href="#">Log in</a>
             </p>
         </div>
         <div class="cd2e05f8d">
             <span>Or</span>
-          </div>
+        </div>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <div id="g_id_onload" data-client_id="173272391799-kk1tuobrr91v4s8lj2t5t59kvh2t4pch.apps.googleusercontent.com"
+            data-callback="onSignIn">
+        </div>
+        <div class="g_id_signin" data-type="standard"></div>
+        <script src="./loginAndSingnUp.js"></script>
     </div>
-    
-    <div class="container_google">
-        <a href="#" style="margin-top: 10%;">
-            <div class="g-sign-in-button">
-                <div class="content-wrapper">
-                    <div class="logo-wrapper">
-                        <img src="https://developers.google.com/identity/images/g-logo.png">
+    <!--<div class="container_google">
+                <a href="#" style="margin-top: 10%;">
+                    <div class="g-signin2" data-onsuccess="onSignIn">
+                        <div class="g-sign-in-button" id="g-sign-in-button-id">
+                            <div class="content-wrapper">
+                                <div class="logo-wrapper">
+                                    <img src="https://developers.google.com/identity/images/g-logo.png">
+                                </div>
+                                <span class="text-container">
+                                    <span>Continue with Google</span>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    <span class="text-container">
-                        <span>Continue with Google</span>
-                    </span>
-                </div>
-            </div>
-        </a>
-    </div>
+                </a>
+            </div>-->
+ 
 </body>
 
 </html>

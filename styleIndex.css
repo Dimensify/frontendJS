@@ -245,6 +245,49 @@ img {
     color: #d72e38;
   }
 
+  .accelerator{
+    display: flex;
+    /* display: inline; */
+    position: relative;
+    /* text-align: center; */
+    margin-top: 200px;
+    height: 120px;
+    /* background-color: #020202; */
+
+    margin-bottom: 50px;
+  }
+
+  .accelerator:hover{
+    background-image: linear-gradient(to right, black, rgb(45, 43, 43));
+  }
+
+  .accelerator a{
+    position: relative;
+    
+  } 
+
+  #link_intel{
+    left: 38%; 
+  }
+
+  #link_startup{
+    left: 45%;
+  }
+  
+  #intel_logo{
+    position: relative;
+    /* left: 18%; */
+    width: 170px;
+  }
+
+  #startupw_logo{
+    margin-top: 30px;
+    position: relative;
+    /* left: -5%; */
+    width: 170px;
+    height: 75px;
+  }
+
 
 
 
